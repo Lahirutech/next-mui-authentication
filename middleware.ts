@@ -11,9 +11,14 @@ export default withAuth(
     )
       return NextResponse.rewrite(new URL('/dashboard', req.url));
   },
+
   {
     callbacks: {
       authorized: ({ token }) => !!token,
     },
   }
 );
+
+export const config = {
+  matcher: ['/dashboard'],
+};
