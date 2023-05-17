@@ -16,9 +16,14 @@ export default withAuth(
     callbacks: {
       authorized: ({ token }) => !!token,
     },
+
+    pages: {
+      signIn: '/login',
+      error: '/api/auth/error',
+    },
   }
 );
 
 export const config = {
-  matcher: ['/dashboard'],
+  matcher: ['/profile'],
 };
